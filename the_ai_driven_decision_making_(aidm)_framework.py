@@ -2374,7 +2374,7 @@ Operational Performance
 - **Top-K Criteria Selected:** {len(top_criteria)} (from top {top_criteria_count} requested)
 - **Rating Scale:** 1-10 (by expert importance)
 
-## 🏆 Top {len(top_criteria)} Selected Criteria:
+## Top {len(top_criteria)} Selected Criteria:
 """
 
                 sorted_scores = sorted(criterion_scores.items(), key=lambda x: x[1]['average_rating'], reverse=True)
@@ -2591,15 +2591,15 @@ Operational Performance
                 success_rate = len(ahp_results) / len(experts) * 100
 
                 result_text = f"""
-# 🏆 COMPREHENSIVE AHP-AIDM ANALYSIS REPORT
+# COMPREHENSIVE AHP-AIDM ANALYSIS REPORT
 
-## 📋 EXECUTIVE SUMMARY:
+## EXECUTIVE SUMMARY:
 - **Decision Topic:** {config['topic']}
 - **Industry Domain:** {config['domain']}
 - **Analysis Date:** {datetime.now().strftime("%Y-%m-%d %H:%M")}
 - **Analysis Method:** Hierarchical AHP with Expert Rating & Re-iteration
 
-## 🎯 KEY RESULTS:
+## KEY RESULTS:
 - **Total Experts Generated:** {len(experts)} diverse virtual experts
 - **Expert Analysis Success Rate:** {len(ahp_results)}/{len(experts)} ({success_rate:.1f}%)
 - **Initial Criteria Generated:** {len(all_criteria)} unique criteria
@@ -2608,7 +2608,7 @@ Operational Performance
 - **Total Pairwise Comparisons:** {total_pairwise} expert judgments
 - **Average Consistency Ratio:** {avg_cr:.4f} (Target: ≤0.10)
 
-## 🥇 TOP 10 FINAL DECISION CRITERIA:
+## TOP 10 FINAL DECISION CRITERIA:
 """
 
                 for i, (criterion, weight) in enumerate(sorted_weights[:10], 1):
@@ -2624,9 +2624,9 @@ Operational Performance
 
                     result_text += f"""
 **{i:2d}. {criterion}**
-   📂 Category: {category_name}
-   ⚖️ Final AHP Weight: {weight:.4f} ({weight*100:.1f}%)
-   ⭐ Original Expert Rating: {original_rating:.1f}/10
+    Category: {category_name}
+    Final AHP Weight: {weight:.4f} ({weight*100:.1f}%)
+    Original Expert Rating: {original_rating:.1f}/10
 """
 
                 result_text += "\n## 📊 EXPERT CONSISTENCY ANALYSIS:\n"
